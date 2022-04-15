@@ -1,0 +1,51 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin-right: 20px;
+    font-family: 'Trebuchet MS';
+    font-size: 20px;
+    margin-left: 25px;
+
+}
+
+header a:hover {
+  color: white;
+}
+
+body {
+  background-color: lightblue;
+}
+
+button {
+    padding: 10px;
+    margin: 24px;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: #247BA0;
+    color: white;
+}
+
+h1 {
+  font-size: 36px;
+  padding: 5px 5px 5px 5px;
+}
+
+h2 {
+  font-size: 24px;
+  padding: 5px 5px 5px 5px;
+}
+
+.welcome {
+      display: block;
+      margin: 40px auto;
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 60vw;
+      background-color: #f0ead6;
+}
+  
+.welcome-contents {
+      padding: 5px 5px 30px 5px;
+}
