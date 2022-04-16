@@ -10,7 +10,7 @@
 </head>
 
   <header>
-    <h3><a class="highscores">Highscores</a></h3>
+    <h3><a href="./highscores.html" class="highscores">Highscores</a></h3>
     <h3 class="time">Time: <span id="countdown">0</span></h3>
   </header>
 
@@ -23,11 +23,11 @@
           within the time limit. Keep in mind that incorrect answers
           will penalize your score/time by ten seconds!
       </p>
-      <button id="quizStart">Start Quiz</button>
+      <a href="q1.html"><button>Start Quiz</button></a>
     </div>
   </section>
 
-  <section class="quizQuestions">
+  <!-- <section class="quizQuestions">
     <h1 class="question">Question</h1>
     <div>
       <div class="answer-container">
@@ -39,8 +39,18 @@
     </div>
   </section>
 
+  <section class="scoreSheet">
+    <h1>Quiz Complete!</h1>
+    <p>You scored:<span id="finalScore"></span></p>
+    <form class="form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" />
+    </form>
+  </section> -->
+
         
 
     <script src="./assets/app.js"></script>
+    <!-- <script src="./assets/quiz.js"></script> -->
 </body>
 </html>
