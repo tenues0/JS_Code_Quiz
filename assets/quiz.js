@@ -45,9 +45,7 @@ function countdown() {
     // Prevent default action
     event.preventDefault();
     console.log(event);
-  
 
-  
     var response = "Your quiz has started!";
     quizResultEl.textContent = response;
   });

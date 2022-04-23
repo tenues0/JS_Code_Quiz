@@ -9,7 +9,7 @@ header {
 
 }
 
-header a:hover {
+.highScoresLink:hover {
   color: white;
   cursor: pointer;
 }
@@ -47,6 +47,40 @@ h2 {
       background-color: #f0ead6;
 }
   
-.welcome-contents {
-      padding: 5px 5px 30px 5px;
+.welcome-title {
+      padding: 30px 5px 30px 5px;
+}
+
+.quizQuestions {
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 60vw;
+  background-color: #f0ead6;
+}
+
+.welcome-question {
+  padding: 30px 5px 30px 5px;
+}
+
+.scoreSheet {
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 60vw;
+  background-color: #f0ead6;
+}
+
+.highscores {
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 60vw;
+  background-color: #f0ead6;
 }

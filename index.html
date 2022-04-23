@@ -10,47 +10,56 @@
 </head>
 
   <header>
-    <h3><a href="./highscores.html" class="highscores">Highscores</a></h3>
+    <h3 class="highScoresLink">Highscores</h3>
     <h3 class="time">Time: <span id="countdown">0</span></h3>
   </header>
 
 <body>
 
-  <section class="welcome">
-    <div class= "welcome-contents"></div>
-      <h1>Coding Quiz Challenge</h1>
-      <p>Try to answer the following code-related questions 
-          within the time limit. Keep in mind that incorrect answers
-          will penalize your score/time by ten seconds!
-      </p>
-      <a href="q1.html"><button>Start Quiz</button></a>
-    </div>
-  </section>
+    <main>
 
-  <!-- <section class="quizQuestions">
-    <h1 class="question">Question</h1>
-    <div>
-      <div class="answer-container">
-        <div class="answer" data-number="1">1.</div>
-        <div class="answer" data-number="2">2.</div>
-        <div class="answer" data-number="3">3.</div>
-        <div class="answer" data-number="4">4.</div>
-      </div>
-    </div>
-  </section>
+      <section class="welcome">
+        <h1 class= "welcome-title">Coding Quiz Challenge</h1>
+          <p>Try to answer the following code-related questions 
+              within the time limit. Keep in mind that incorrect answers
+              will penalize your score/time by ten seconds!
+          </p>
+          <button class="quizStart">Start Quiz</button>
+      </section>
 
-  <section class="scoreSheet">
-    <h1>Quiz Complete!</h1>
-    <p>You scored:<span id="finalScore"></span></p>
-    <form class="form">
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" name="name" />
-    </form>
-  </section> -->
+      <section class="quizQuestions">
+        <h1 class="question">Question</h1>
+          <div class="answer-container">
+            <button class="button" id="btn1">1. </button>
+            <button class="button" id="btn2">2. </button>
+            <button class="button" id="btn3">3. </button>
+            <button class="button" id="btn4">4. </button>
+          </div>
+          <div class="questionResult">
+            <h2 class="result"></h2>
+          </div>
+      </section>
 
-        
+      <section class="scoreSheet">
+        <h1>Quiz Complete!</h1>
+        <p>You scored:<span id="finalScore"></span></p>
+        <form class="form">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" />
+        </form>
+      </section>
+
+      <section class="highscores">
+        <h1>Highscores</h1>
+        <ol id="highscoresList"></ol>
+        <div class="optionsButton">
+          <button class="retryQuiz">Retry Quiz</button>
+          <button class="reset">Reset Your Scores</button>
+        </div>
+      </section>
+
+    </main>
 
     <script src="./assets/app.js"></script>
-    <!-- <script src="./assets/quiz.js"></script> -->
 </body>
 </html>
