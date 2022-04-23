@@ -53,14 +53,6 @@ var questionsArray =
     },
   ];
 
-// Some variables needed from question array
-// var answerArray = questionsArray[0].choices;
-// console.log(answerArray);
-// var correctAnswerIndex = questionsArray[0].realAnswer - 1;
-// console.log(correctAnswerIndex);
-// var correctAnswer = questionsArray[0].realAnswer;
-// console.log(correctAnswer);
-
 // Timer that counts down from 75, borrowed from week 5 activity 10
 function countdown() {
   // var timeLeft = 75;
@@ -139,14 +131,8 @@ function quizHasStarted() {
 };
 
 
-// var j = 0
-
-// https://stackoverflow.com/questions/50522916/javascript-on-click-event-for-multiple-buttons-with-same-class
-
-
 function checkAnswer(correctAnswer) {
-  
-  console.log("Here is the damn i!!! " + i);
+  console.log("Here is the i !!! " + i);
   // https://eloquentjavascript.net/15_event.html
   document.body.addEventListener("click", event => {
     event.preventDefault();
@@ -155,8 +141,7 @@ function checkAnswer(correctAnswer) {
       if (event.target.textContent == correctAnswer) {
         console.log("correct answer selected");
         result.textContent = "correct answer selected";
-        // i++
-        // j--
+
         if (i == questionsArray.length) {
           checkIfLastQuestion()
         } else {
@@ -168,8 +153,6 @@ function checkAnswer(correctAnswer) {
         console.log("wrong answer selected");
         result.textContent = "wrong answer selected";
         subtractTime(timeLeft);
-        // i += j
-        // j--
         
         if (i == questionsArray.length) {
           checkIfLastQuestion()
@@ -199,6 +182,7 @@ function checkIfLastQuestion() {
     document.querySelector('.quizQuestions').style.display = 'none';
     document.querySelector('.scoreSheet').style.display = 'block';
     document.querySelector('.highscores').style.display = 'none';
+    // user can enter in name for score
   }
 
 // localStorage.setItem("timeLeft", 75);
