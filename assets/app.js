@@ -35,23 +35,23 @@ var questionsArray =
     {
       question: "Does this question display?",
       choices: ["Yes", "No", "Hell No", "Sometimes"],
-      realAnswer: 4
+      realAnswer: "Sometimes"
     },
 
     {
       question: "How about this question?",
       choices: ["Yes", "No", "It will tomorrow", "Yes because you are awesome at coding"],
-      realAnswer: 1
+      realAnswer: "Yes"
     },
     {
       question: "Can you believe that this pops up on the screen?",
       choices: ["Yes", "No", "It's 'bout damn time", "Finally!"],
-      realAnswer: 3
+      realAnswer: "It's 'bout damn time"
     },
     {
       question: "Will this developer get paid?",
       choices: ["Yes", "No", "Not yet", "Maybe"],
-      realAnswer: 3
+      realAnswer: "Not yet"
     },
   ];
 
@@ -132,29 +132,21 @@ function questionFunction() {
   button3.textContent = answerArray[2];
   button4.textContent = answerArray[3];
 
-  checkAnswer(correctAnswer);
+  // checkAnswer(correctAnswer);
 };
 
 
-function checkAnswer(correctAnswer) {
+// the event listener in this function is getting called multiple times
+function checkAnswer(event) {
   console.log("Here is the i !!! " + i);
-  // https://eloquentjavascript.net/15_event.html
-
-  // previous way of listening for button clicks
-  // document.body.addEventListener("click", event => 
-
-  possibleAnswers.addEventListener("click", function (event) {
-    event.preventDefault();
-    // previous way of only selecting answer buttons
-    // if (event.target.nodeName == "BUTTON" && event.target.className != "quizStart") 
     if (event.target.className == "button") {
       console.log("Clicked", event.target.textContent);
-      if (event.target.textContent == correctAnswer) {
+      if (event.target.textContent == questionsArray[i].realAnswer) {
         console.log("correct answer selected");
         result.textContent = "correct answer selected";
-
-        if (i == questionsArray.length) {
+        if (i == questionsArray.length - 1) {
           checkIfLastQuestion()
+          console.log("test")
         } else {
           i++;
           console.log("i++ " + i);
@@ -164,20 +156,17 @@ function checkAnswer(correctAnswer) {
         console.log("wrong answer selected");
         result.textContent = "wrong answer selected";
         subtractTime();
-        
-        if (i == questionsArray.length) {
+        if (i == questionsArray.length - 1) {
           checkIfLastQuestion()
         } else {
           i++;
           console.log("i++ " + i);
           questionFunction()
         }
-          
       }
     }
-  });
+  
 };
-
 
 
 function subtractTime() {
@@ -195,6 +184,22 @@ function checkIfLastQuestion() {
     document.querySelector('.highscores').style.display = 'none';
     // user can enter in name for score
   }
+
+
+// Had to pull the event listener out of the function.
+// when the event listener was in the function it was getting tripped
+// more than once
+button1.addEventListener("click", checkAnswer);
+button2.addEventListener("click", checkAnswer);
+button3.addEventListener("click", checkAnswer);
+button4.addEventListener("click", checkAnswer);
+
+
+
+
+
+
+
 
 // localStorage.setItem("timeLeft", 75);
 
