@@ -19,6 +19,8 @@ var button1 = document.querySelector("#btn1");
 var button2 = document.querySelector("#btn2");
 var button3 = document.querySelector("#btn3");
 var button4 = document.querySelector("#btn4");
+var possibleAnswers = document.querySelector('.answer-container');
+
 
 // other variables needed
 var correctAnswerButton;
@@ -102,26 +104,29 @@ startEl.addEventListener("click", function (event) {
   countdown();
 
   // run question function
-  quizHasStarted();
+  questionFunction();
 
 });
 var i = 0;
 
 // function that runs through the questions
-function quizHasStarted() {
+function questionFunction() {
   // iterate through questions array and display question
   var quizQues = questionsArray[i].question;
+  // this line of code prints the quiz question onto the screen
   individualQuestion.textContent = quizQues;
 
+  // this line of code pulls up the answer array
   var answerArray = questionsArray[i].choices;
   console.log(answerArray);
   var correctAnswerIndex = questionsArray[i].realAnswer - 1;
-  console.log(correctAnswerIndex);
+  console.log("correctAnswerIndex " + correctAnswerIndex);
 
+  // this line of code rints the correct answer to the console
   var correctAnswer = answerArray[correctAnswerIndex];
   console.log("The correct answer is: " + correctAnswer);
 
-  // populate buttons with possible answers
+  // populate buttons with possible answers from answer array
   button1.textContent = answerArray[0];
   button2.textContent = answerArray[1];
   button3.textContent = answerArray[2];
@@ -134,9 +139,15 @@ function quizHasStarted() {
 function checkAnswer(correctAnswer) {
   console.log("Here is the i !!! " + i);
   // https://eloquentjavascript.net/15_event.html
-  document.body.addEventListener("click", event => {
+
+  // previous way of listening for button clicks
+  // document.body.addEventListener("click", event => 
+
+  possibleAnswers.addEventListener("click", function (event) {
     event.preventDefault();
-    if (event.target.nodeName == "BUTTON" && event.target.className != "quizStart") {
+    // previous way of only selecting answer buttons
+    // if (event.target.nodeName == "BUTTON" && event.target.className != "quizStart") 
+    if (event.target.className == "button") {
       console.log("Clicked", event.target.textContent);
       if (event.target.textContent == correctAnswer) {
         console.log("correct answer selected");
@@ -147,19 +158,19 @@ function checkAnswer(correctAnswer) {
         } else {
           i++;
           console.log("i++ " + i);
-          quizHasStarted()
+          questionFunction()
         }
       } else {
         console.log("wrong answer selected");
         result.textContent = "wrong answer selected";
-        subtractTime(timeLeft);
+        subtractTime();
         
         if (i == questionsArray.length) {
           checkIfLastQuestion()
         } else {
           i++;
           console.log("i++ " + i);
-          quizHasStarted()
+          questionFunction()
         }
           
       }
@@ -169,7 +180,7 @@ function checkAnswer(correctAnswer) {
 
 
 
-function subtractTime () {
+function subtractTime() {
   timeLeft -= 10;
 }
 
